@@ -1,6 +1,6 @@
 <script>
 	import { getContext, createEventDispatcher } from "svelte"
-	import { valueStore } from "./data.js"
+	// import { valueStore } from "./data.js"
 
 	export let placeholder = "PLACEHOLDER"
 	export let value = ""

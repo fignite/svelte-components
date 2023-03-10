@@ -1,5 +1,6 @@
 <script>
 	import { getContext, createEventDispatcher } from "svelte"
+	export let name = "Button"
 
 	export let id
 	export let classes = ""
