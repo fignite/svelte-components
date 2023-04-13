@@ -1,30 +1,28 @@
 <script>
 	import { getContext, createEventDispatcher } from "svelte"
-	export let name = "Button"
+	import "../global.css"
+	export const name = "Button"
 
 	export let id
 	export let classes = ""
 	export let label = ""
 	export let icon
 	export let iconRight
+	export let type
 
-	const contextHandleInput = getContext("handleInput")
-
-	const dispatch = createEventDispatcher()
-
-	function handleInput(e) {
-		contextHandleInput(e)
-		dispatch("input", e)
-	}
 </script>
 
-<div>
-	<button {id} class="Button {classes}">
+
+	<button on:preventDefault on:click
+	on:mouseover
+	on:mouseenter
+	on:mouseleave
+	on:focus {id} class="Button {classes}" label="{label}" {type}>
 		<div class="gap">
 		{#if icon}<span class="icon" icon={icon} />{/if}<span><slot /></span>{#if iconRight}<span class="icon" icon={iconRight} />{/if}
 		</div>
 	</button>
-</div>
+
 
 <style>
 	.Button,
@@ -69,5 +67,16 @@
 		background-color: transparent;
 		color: var(--figma-color-text, black);
 		border: 1px solid transparent;
+	}
+
+	.tertiary2 {
+		background-color: var(--figma-color-bg-tertiary);
+		color: var(--figma-color-text, black);
+		border: 1px solid transparent;
+	}
+
+	.Button.small {
+		line-height: 20px;
+		padding: var(--padding-0) 8px;
 	}
 </style>
