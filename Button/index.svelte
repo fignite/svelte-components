@@ -69,6 +69,12 @@
 		border: 1px solid transparent;
 	}
 
+	.danger {
+		background-color: transparent;
+		color: var(--figma-color-text-danger);
+		border: 1px solid var(--figma-color-border-ondanger);
+	}
+
 	.tertiary2 {
 		background-color: var(--figma-color-bg-tertiary);
 		color: var(--figma-color-text, black);

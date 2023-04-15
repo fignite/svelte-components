@@ -30,18 +30,26 @@
 	
 </script>
 
-<div style={style} class="Field layout-{layout}">
+<div style={style} class="Field layout-{layout} type-{type}">
 	
 	<label class="{classes}">
 		{#if layout === "stacked" || layout === "inline"}
 			<span class="label">{label}</span>
 		{/if}
 		<div class="input">
+			{#if type === "area"}
+			<textarea
+			rows="4"
+			{id}
+			{disabled}
+			placeholder={layout !== "stacked" ? placeholder : ""}>{value}</textarea>
+			{:else}
 			<input use:typeAction autocomplete="false"
 				{id}
 				{disabled}
 				placeholder={layout !== "stacked" ? placeholder : ""}
 				bind:value />
+			{/if}
 		</div>
 	</label>
 </div>
@@ -78,6 +86,7 @@
 		border-color: var(--figma-color-border-selected, var(--color-blue));
 		border-width: 2px;
 		padding-inline: 6px;
+		padding-block: 1px;
 	}
 
 	.input span {
@@ -106,14 +115,49 @@
 
 	.layout-inline label {
 		display: flex;
-		align-items: center;
+		/* align-items: center; */
+	}
+
+	.layout-inline .label {
+		margin: 0;
+		margin-top: 7px; /* 6 + 1 to account for border */
 	}
 
 	.layout-inline label > :first-child {
-		flex-basis: 100px;
+		flex-basis: 80px;
+		flex-shrink: 0;
 	}
 
 	.layout-inline label > :last-child {
 		flex-grow: 1;
+	}
+
+	/* Type: area */
+
+	.type-area .input {
+		height: auto;
+		padding: 0;
+	}
+
+	.type-area textarea {
+		padding: 6px;
+	}
+
+	.type-area textarea:focus-within {
+		padding: 5px;
+	}
+
+	.type-area textarea {
+		border: none;
+		width: 100%;
+		background-color: transparent;
+		font: inherit;
+		resize: none;
+		cursor: default;
+	}
+
+	.type-area textarea:focus-visible {
+		/* border: none; */
+		outline: none;
 	}
 </style>
