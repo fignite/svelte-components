@@ -42,7 +42,8 @@
 			rows="4"
 			{id}
 			{disabled}
-			placeholder={layout !== "stacked" ? placeholder : ""}>{value}</textarea>
+			bind:value
+			placeholder={layout !== "stacked" ? placeholder : ""}></textarea>
 			{:else}
 			<input use:typeAction autocomplete="false"
 				{id}
@@ -87,6 +88,10 @@
 		border-width: 2px;
 		padding-inline: 6px;
 		padding-block: 1px;
+	}
+
+	.input {
+		flex-basis: 100%;
 	}
 
 	.input span {
@@ -159,5 +164,9 @@
 	.type-area textarea:focus-visible {
 		/* border: none; */
 		outline: none;
+	}
+
+	textarea {
+		color: var(--figma-color-text)
 	}
 </style>

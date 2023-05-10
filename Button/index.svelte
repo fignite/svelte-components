@@ -28,7 +28,7 @@
 	.Button,
 	button {
 		line-height: 24px;
-		padding: var(--padding-0) var(--padding-150);
+		padding: var(--padding-0) 11px;
 		border: 2px solid var(--figma-color-bg-brand, var(--color-blue));
 		background-color: var(--figma-color-bg-brand, var(--color-blue));
 		color: white;
@@ -61,6 +61,16 @@
 		background-color: transparent;
 		color: var(--figma-color-text, black);
 		border: 1px solid var(--figma-color-border-strong, white);
+	}
+
+	.ghost {
+		background-color: transparent;
+		color: var(--figma-color-text, black);
+		border: 1px solid transparent;
+	}
+
+	.ghost:hover {
+		background-color: var(--figma-color-bg-hover);
 	}
 
 	.tertiary {
