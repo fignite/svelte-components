@@ -22,8 +22,6 @@
 	export let icon
 	export let layout
 
-	let input
-
 	function typeAction(node) {
 		node.type = type;
 	}
@@ -39,13 +37,14 @@
 		<div class="input">
 			{#if type === "area"}
 			<textarea
+			on:input
 			rows="4"
 			{id}
 			{disabled}
 			bind:value
 			placeholder={layout !== "stacked" ? placeholder : ""}></textarea>
 			{:else}
-			<input use:typeAction autocomplete="false"
+			<input on:input on:focus use:typeAction autocomplete="false"
 				{id}
 				{disabled}
 				placeholder={layout !== "stacked" ? placeholder : ""}

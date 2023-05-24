@@ -27,7 +27,7 @@
 <style>
 	.Button,
 	button {
-		line-height: 24px;
+		line-height: 22px;
 		padding: var(--padding-0) 11px;
 		border: 2px solid var(--figma-color-bg-brand, var(--color-blue));
 		background-color: var(--figma-color-bg-brand, var(--color-blue));
@@ -58,12 +58,14 @@
 	}
 
 	.secondary {
+		line-height: 24px;
 		background-color: transparent;
 		color: var(--figma-color-text, black);
 		border: 1px solid var(--figma-color-border-strong, white);
 	}
 
 	.ghost {
+		line-height: 24px;
 		background-color: transparent;
 		color: var(--figma-color-text, black);
 		border: 1px solid transparent;
@@ -74,18 +76,21 @@
 	}
 
 	.tertiary {
+		line-height: 24px;
 		background-color: transparent;
 		color: var(--figma-color-text, black);
 		border: 1px solid transparent;
 	}
 
 	.danger {
+		line-height: 24px;
 		background-color: transparent;
 		color: var(--figma-color-text-danger);
 		border: 1px solid var(--figma-color-border-ondanger);
 	}
 
 	.tertiary2 {
+		line-height: 24px;
 		background-color: var(--figma-color-bg-tertiary);
 		color: var(--figma-color-text, black);
 		border: 1px solid transparent;

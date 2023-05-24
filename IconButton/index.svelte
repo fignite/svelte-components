@@ -23,12 +23,15 @@
 
 <style>
 	.IconButton {
-		min-width: 30px;
-    	height: 30px;
-    	border: 2px solid transparent;
+		min-width: 32px;
+    	height: 32px;
+		line-height: 32px;
+    	border: 1px solid transparent;
+		background-clip: padding-box;
 		position: relative;
-		border-radius: 2px;
+		border-radius: 3px;
 		/* margin: 2px -3px; */
+		box-sizing: border-box;
 	}
 
 	.IconButton > .contents {
@@ -41,6 +44,8 @@
 
 	.IconButton:hover {
 		background-color: var(--figma-color-bg-hover);
+		/* Need this so that when other elements overlap, the one currently being hovered over stays on top */
+		z-index: 100;
 	}
 
 
