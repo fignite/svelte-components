@@ -81,7 +81,6 @@
     </div>
   {/if}
 
-  <!-- {#if $$slots.icon}<span class="icon"><slot name="icon"/></span>{/if} -->
   {#if $$slots.label}
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div
@@ -99,6 +98,8 @@
         });
       }}
     >
+      {#if $$slots.icon}<span class="label-icon"><slot name="icon" /></span
+        >{/if}
       <span class="text"><slot name="label" /></span>
 
       <span class="" style="margin-left: 8px">
@@ -248,5 +249,8 @@
 
   .host.expandOnHover:hover .label .text {
     flex-grow: 1;
+  }
+  .label-icon {
+    margin-right: 8px;
   }
 </style>

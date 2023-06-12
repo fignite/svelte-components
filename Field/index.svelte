@@ -85,6 +85,30 @@
     border-radius: var(--border-radius-25);
   }
 
+  /* Layout underline */
+
+  .layout-underline .input {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 7px;
+    margin-right: 7px;
+    border-bottom: 1px solid var(--figma-color-border);
+  }
+
+  .layout-underline .input:hover {
+    padding-left: 7px;
+    padding-right: 7px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .layout-underline .input:focus-within {
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   .input:hover {
     border-color: var(--figma-color-border, var(--color-black-10));
     border-width: 1px;

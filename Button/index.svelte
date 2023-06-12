@@ -24,8 +24,10 @@
   {type}
 >
   <div class="gap">
-    {#if icon}<span class="icon" {icon} />{/if}<span><slot /></span
-    >{#if iconRight}<span class="icon" icon={iconRight} />{/if}
+    {#if icon}<span class="icon" {icon} />{/if}<slot />{#if iconRight}<span
+        class="icon"
+        icon={iconRight}
+      />{/if}
   </div>
 </button>
 
@@ -115,5 +117,9 @@
   .Button:enabled:active .gap,
   .Button:enabled:focus .gap {
     padding-block: 1px !important;
+  }
+
+  .Button .gap:first-child :global(svg) {
+    margin-left: -6px;
   }
 </style>
