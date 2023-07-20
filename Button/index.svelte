@@ -93,7 +93,7 @@
     line-height: 24px;
     background-color: transparent;
     color: var(--figma-color-text-danger);
-    border: 1px solid var(--figma-color-border-danger);
+    border: 1px solid var(--figma-color-border-ondanger);
   }
 
   .tertiary2 {
